@@ -2,7 +2,13 @@
 
 `local-ingest` is an offline command-line tool and Python library that turns a local file or directory into a readable text digest for use as context with language models. It works with ordinary folders and files; the source does not need to be a Git repository.
 
-It scans the local filesystem only. It does not clone remote repositories or run a web server. It can apply include/exclude glob patterns, respect `.gitignore`, `.gitingestignore`, and `.ignore` rules, skip large or binary files, estimate token counts, and convert Jupyter notebooks into readable Python text.
+It scans the local filesystem only. It does not clone remote repositories or run a web server. It can apply include/exclude glob patterns, respect rules from `.gitignore`, `.gitingestignore`, `.ignore`, and other `*.ignore` files anywhere in the scanned directory, skip large or binary files, estimate token counts, and convert Jupyter notebooks into readable Python text.
+
+## Motivation
+
+Providing useful context to a language model often means collecting relevant files from a project and arranging them in a readable form. Doing this by hand is repetitive, and sending an entire project can include irrelevant files or exceed a model's context limit.
+
+`local-ingest` automates that preparation directly from the local filesystem. It is designed for any local folder or file, not only Git repositories, and keeps source content on the machine. The resulting digest can be reviewed, filtered, and supplied to the model or workflow of your choice.
 
 ## Table of Contents
 

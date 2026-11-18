@@ -29,7 +29,7 @@ async def ingest_async(
         exclude_patterns=exclude_patterns, include_patterns=include_patterns,
     )
     if not include_gitignored and query.local_path.is_dir():
-        for filename in (".gitignore", ".gitingestignore", ".ignore"):
+        for filename in (".gitignore", ".gitingestignore", ".ignore", "*.ignore"):
             query.ignore_patterns.update(load_ignore_patterns(query.local_path, filename=filename))
     result = ingest_query(query)
     if output is not None:

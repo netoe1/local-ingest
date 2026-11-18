@@ -48,7 +48,7 @@ This reference describes every maintained project file tracked in the repository
 | [`src/utils/compat_typing.py`](../src/utils/compat_typing.py) | Re-exports typing constructs with fallbacks for older supported Python versions. |
 | [`src/utils/exceptions.py`](../src/utils/exceptions.py) | Defines custom exceptions for notebook errors and legacy timeout or GitHub token cases. |
 | [`src/utils/file_utils.py`](../src/utils/file_utils.py) | Reads file samples, selects likely text encodings, and checks whether bytes decode as text. |
-| [`src/utils/ignore_patterns.py`](../src/utils/ignore_patterns.py) | Defines the default exclusions and loads patterns from `.gitignore`, `.gitingestignore`, and other ignore files. |
+| [`src/utils/ignore_patterns.py`](../src/utils/ignore_patterns.py) | Defines the default exclusions and loads patterns from `.gitignore`, `.gitingestignore`, `.ignore`, and other `*.ignore` files. |
 | [`src/utils/ingestion_utils.py`](../src/utils/ingestion_utils.py) | Matches paths relative to the scan root against include and exclude patterns. |
 | [`src/utils/logging_config.py`](../src/utils/logging_config.py) | Configures standard-library logging, terminal colors, log levels, and the `LOG_COLOR` override. |
 | [`src/utils/notebook.py`](../src/utils/notebook.py) | Reads notebook JSON and renders cells and outputs as text. |

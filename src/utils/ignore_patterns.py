@@ -90,11 +90,14 @@ DEFAULT_IGNORE_PATTERNS: set[str] = {
     "*.nupkg",
     # Go / .NET / C#
     "bin/",
-    # Version control
+    # Version control and ignore configuration
     ".git",
     ".svn",
     ".hg",
     ".gitignore",
+    ".gitingestignore",
+    ".ignore",
+    "*.ignore",
     ".gitattributes",
     ".gitmodules",
     # Images and media
@@ -181,7 +184,7 @@ def load_ignore_patterns(root: Path, filename: str) -> set[str]:
     root : Path
         Directory to walk.
     filename : str
-        The filename to look for in each directory.
+        A filename or glob pattern to look for in each directory.
 
     Returns
     -------

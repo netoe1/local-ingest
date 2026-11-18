@@ -69,3 +69,22 @@ def test_ingest_with_gitignore(repo_path: Path) -> None:
     # Now both files should be present.
     assert "This file should be excluded." in content_without_ignore
     assert "This file should be included." in content_without_ignore
+
+
+def test_ingest_with_nested_and_named_ignore_files(tmp_path: Path) -> None:
+    """Ignore files listed by nested ``.ignore`` and custom ``*.ignore`` files."""
+    nested = tmp_path / "nested"
+    nested.mkdir()
+    (nested / ".ignore").write_text("nested-secret.txt\n", encoding="utf-8")
+    (nested / "nested-secret.txt").write_text("nested secret", encoding="utf-8")
+
+    (tmp_path / "team.ignore").write_text("team-secret.txt\n", encoding="utf-8")
+    (tmp_path / "team-secret.txt").write_text("team secret", encoding="utf-8")
+
+    _, _, filtered_content = asyncio.run(ingest_async(source=str(tmp_path)))
+    assert "nested secret" not in filtered_content
+    assert "team secret" not in filtered_content
+
+    _, _, full_content = asyncio.run(ingest_async(source=str(tmp_path), include_gitignored=True))
+    assert "nested secret" in full_content
+    assert "team secret" in full_content

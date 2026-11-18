@@ -34,7 +34,7 @@ The CLI normalizes the options and calls `asyncio.run()` to execute `_async_main
 
 1. Resolves the local source path with `parse_local_dir_path()`.
 2. Prepares the include and exclude filters.
-3. Loads `.gitignore`, `.gitingestignore`, and `.ignore` files when the source is a directory and `include_gitignored` is disabled.
+3. Loads `.gitignore`, `.gitingestignore`, `.ignore`, and other `*.ignore` files found under the source directory when `include_gitignored` is disabled.
 4. Calls `ingest_query()` to traverse the source and build the result.
 5. Writes the tree and file contents when an output destination is provided.
 
