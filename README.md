@@ -42,6 +42,8 @@ summary, tree, content = ingest(
 
 The returned values are a short summary, a tree view, and the collected text. Ingestion runs locally and does not require network access.
 
+See [the workflow guide](docs/fluxo-de-funcionamento.md) for the execution flow and module responsibilities.
+
 ## Origin
 
 This project began as a lightweight local adaptation of [Gitingest](https://github.com/coderamp-labs/gitingest). Its purpose here is general local file and folder ingestion, not remote Git repository processing.
