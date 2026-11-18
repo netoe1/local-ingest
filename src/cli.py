@@ -7,7 +7,11 @@ import asyncio
 from typing import TypedDict
 
 import click
-from typing_extensions import Unpack
+
+try:
+    from typing import Unpack
+except ImportError:  # Python < 3.11
+    from typing_extensions import Unpack
 
 from config import MAX_FILE_SIZE, OUTPUT_FILE_NAME
 from entrypoint import ingest_async
