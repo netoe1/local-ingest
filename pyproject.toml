@@ -50,7 +50,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = {find = {where = ["src"]}}
+packages = {find = {where = ["source"]}}
 include-package-data = true
 
 # Linting configuration
@@ -109,7 +109,7 @@ filter_files = true
 
 # Test configuration
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["source"]
 testpaths = ["tests/"]
 python_files = "test_*.py"
 asyncio_mode = "auto"

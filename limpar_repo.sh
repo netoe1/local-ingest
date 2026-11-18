@@ -4,8 +4,8 @@ set -e
 echo "🧹 Iniciando limpeza do repositório para o local-ingest..."
 
 # 1. Camada Web, Frontend e Infraestrutura
-rm -rf src/server \
-       src/static \
+rm -rf source/server \
+       source/static \
        .docker \
        Dockerfile \
        .dockerignore \
@@ -24,13 +24,13 @@ rm -rf .github \
        SECURITY.md
 
 # 3. Módulos de Clonagem Remota e Git
-rm -f src/gitingest/clone.py \
-      src/gitingest/schemas/cloning.py \
-      src/gitingest/utils/git_utils.py \
-      src/gitingest/utils/auth.py \
-      src/gitingest/utils/query_parser_utils.py \
-      src/gitingest/utils/timeout_wrapper.py \
-      src/gitingest/utils/os_utils.py
+rm -f source/gitingest/clone.py \
+      source/gitingest/schemas/cloning.py \
+      source/gitingest/utils/git_utils.py \
+      source/gitingest/utils/auth.py \
+      source/gitingest/utils/query_parser_utils.py \
+      source/gitingest/utils/timeout_wrapper.py \
+      source/gitingest/utils/os_utils.py
 
 # 4. Testes Obsoletos (Servidor e Git Remoto)
 rm -rf tests/server \
