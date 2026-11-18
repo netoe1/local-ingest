@@ -4,6 +4,17 @@
 
 It scans the local filesystem only. It does not clone remote repositories or run a web server. It can apply include/exclude glob patterns, respect `.gitignore`, `.gitingestignore`, and `.ignore` rules, skip large or binary files, estimate token counts, and convert Jupyter notebooks into readable Python text.
 
+## Table of Contents
+
+- [Install](#install)
+- [Command line](#command-line)
+- [Python API](#python-api)
+- [Black-box architecture](docs/black-box-architecture.md)
+- [Workflow guide](docs/workflow.md)
+- [File reference](docs/file-reference.md)
+- [Origin](#origin)
+- [License](#license)
+
 ## Install
 
 ```bash
@@ -42,7 +53,7 @@ summary, tree, content = ingest(
 
 The returned values are a short summary, a tree view, and the collected text. Ingestion runs locally and does not require network access.
 
-See the [workflow guide](docs/workflow.md) for the execution flow and the [file reference](docs/file-reference.md) for the responsibility of each project file.
+See the [black-box architecture](docs/black-box-architecture.md) for system boundaries and interfaces, the [workflow guide](docs/workflow.md) for execution order, and the [file reference](docs/file-reference.md) for the responsibility of each project file.
 
 ## Origin
 
