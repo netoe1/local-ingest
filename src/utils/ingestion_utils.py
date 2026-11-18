@@ -36,7 +36,7 @@ def _should_include(path: Path, base_path: Path, include_patterns: set[str]) -> 
     if path.is_dir():  # keep directories so children are visited
         return True
 
-    spec = PathSpec.from_lines("gitwildmatch", include_patterns)
+    spec = PathSpec.from_lines("gitignore", include_patterns)
     return spec.match_file(str(rel_path))
 
 
@@ -62,7 +62,7 @@ def _should_exclude(path: Path, base_path: Path, ignore_patterns: set[str]) -> b
     if rel_path is None:  # outside repo → already "excluded"
         return True
 
-    spec = PathSpec.from_lines("gitwildmatch", ignore_patterns)
+    spec = PathSpec.from_lines("gitignore", ignore_patterns)
     return spec.match_file(str(rel_path))
 
 

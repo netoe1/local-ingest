@@ -79,8 +79,8 @@ def main(**cli_kwargs: Unpack[_CLIArgs]) -> None:
         $ local-ingest -o -
 
     With filtering:
-        $ gitingest -i "*.py" -e "*.log"
-        $ gitingest --include-pattern "*.js" --exclude-pattern "node_modules/*"
+        $ local-ingest -i "*.py" -e "*.log"
+        $ local-ingest --include-pattern "*.js" --exclude-pattern "node_modules/*"
 
     """
     asyncio.run(_async_main(**cli_kwargs))

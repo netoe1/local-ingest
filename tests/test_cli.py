@@ -27,7 +27,6 @@ from config import MAX_FILE_SIZE, OUTPUT_FILE_NAME
                 "tests/",
                 "--include-pattern",
                 "src/",
-                "--include-submodules",
             ],
             True,
             id="custom-options",

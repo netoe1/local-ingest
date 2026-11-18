@@ -59,7 +59,7 @@ def ingest_query(query: IngestionQuery) -> tuple[str, str, str]:
         msg = f"{query.slug} cannot be found"
         raise ValueError(msg)
 
-    if (query.type and query.type == "blob") or query.local_path.is_file():
+    if query.local_path.is_file():
         # TODO: We do this wrong! We should still check the branch and commit!
         logger.info("Processing single file", extra={"file_path": str(path)})
 
@@ -68,7 +68,7 @@ def ingest_query(query: IngestionQuery) -> tuple[str, str, str]:
             msg = f"Path {path} is not a file"
             raise ValueError(msg)
 
-        relative_path = path.relative_to(query.local_path)
+        relative_path = path.name if query.local_path.is_file() else path.relative_to(query.local_path)
 
         file_node = FileSystemNode(
             name=path.name,

@@ -1,6 +1,7 @@
 """Tests for the gitignore functionality in Gitingest."""
 
 from pathlib import Path
+import asyncio
 
 import pytest
 
@@ -48,22 +49,23 @@ def test_load_gitignore_patterns(tmp_path: Path) -> None:
         assert not pattern.startswith("#")
 
 
-@pytest.mark.asyncio
-async def test_ingest_with_gitignore(repo_path: Path) -> None:
+def test_ingest_with_gitignore(repo_path: Path) -> None:
     """Integration test for ``ingest_async()`` respecting ``.gitignore`` rules.
 
     When ``include_gitignored`` is ``False`` (default), the content of ``exclude.txt`` should be omitted.
     When ``include_gitignored`` is ``True``, both files should be present.
     """
     # Run ingestion with the gitignore functionality enabled.
-    _, _, content_with_ignore = await ingest_async(source=str(repo_path))
+    _, _, content_with_ignore = asyncio.run(ingest_async(source=str(repo_path)))
     # 'exclude.txt' should be skipped.
     assert "This file should be excluded." not in content_with_ignore
     # 'include.txt' should be processed.
     assert "This file should be included." in content_with_ignore
 
     # Run ingestion with the gitignore functionality disabled.
-    _, _, content_without_ignore = await ingest_async(source=str(repo_path), include_gitignored=True)
+    _, _, content_without_ignore = asyncio.run(
+        ingest_async(source=str(repo_path), include_gitignored=True),
+    )
     # Now both files should be present.
     assert "This file should be excluded." in content_without_ignore
     assert "This file should be included." in content_without_ignore

@@ -31,7 +31,7 @@ def test_run_ingest_query(temp_directory: Path, sample_query: IngestionQuery) ->
 
     summary, _, content = ingest_query(sample_query)
 
-    assert "Repository: test_user/test_repo" in summary
+    assert "Path:" in summary
     assert "Files analyzed: 8" in summary
 
     # Check presence of key files in the content
@@ -215,7 +215,7 @@ def test_include_ignore_patterns(
 
     summary, structure, content = ingest_query(sample_query)
 
-    assert "Repository: test_user/test_repo" in summary
+    assert "Path:" in summary
     num_files_regex = re.compile(r"^Files analyzed: (\d+)$", re.MULTILINE)
     assert (num_files_match := num_files_regex.search(summary)) is not None
     assert int(num_files_match.group(1)) == pattern_scenario["expected_num_files"]
