@@ -7,6 +7,8 @@ from pathlib import Path
 
 from gitingest.schemas import IngestionQuery
 
+__all__ = ["IngestionQuery", "parse_local_dir_path"]
+
 
 def parse_local_dir_path(path_str: str) -> IngestionQuery:
     """Resolve a path and create its scan configuration."""

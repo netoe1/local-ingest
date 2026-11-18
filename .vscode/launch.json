@@ -4,9 +4,12 @@
             "name": "Python Debugger: Module",
             "type": "debugpy",
             "request": "launch",
-            "module": "server",
+            "module": "gitingest",
             "args": [],
-            "cwd": "${workspaceFolder}/src"
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/source"
+            }
         }
     ]
 }
