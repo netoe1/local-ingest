@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Iterable
 
-from gitingest.utils.ignore_patterns import DEFAULT_IGNORE_PATTERNS
+from utils.ignore_patterns import DEFAULT_IGNORE_PATTERNS
 
 _PATTERN_SPLIT_RE = re.compile(r"[,\s]+")
 

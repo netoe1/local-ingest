@@ -4,8 +4,8 @@ set -e
 echo "🧹 Iniciando limpeza do repositório para o local-ingest..."
 
 # 1. Camada Web, Frontend e Infraestrutura
-rm -rf source/server \
-       source/static \
+rm -rf src/server \
+       src/static \
        .docker \
        Dockerfile \
        .dockerignore \
@@ -24,13 +24,7 @@ rm -rf .github \
        SECURITY.md
 
 # 3. Módulos de Clonagem Remota e Git
-rm -f source/gitingest/clone.py \
-      source/gitingest/schemas/cloning.py \
-      source/gitingest/utils/git_utils.py \
-      source/gitingest/utils/auth.py \
-      source/gitingest/utils/query_parser_utils.py \
-      source/gitingest/utils/timeout_wrapper.py \
-      source/gitingest/utils/os_utils.py
+# Remote Git modules were removed when the project became fully local.
 
 # 4. Testes Obsoletos (Servidor e Git Remoto)
 rm -rf tests/server \
@@ -40,4 +34,4 @@ rm -rf tests/server \
        tests/query_parser/test_git_host_agnostic.py
 
 echo "✅ Arquivos removidos com sucesso!"
-echo "⚠️  Próximo passo: atualizar os imports e dependências nos arquivos restantes."
+echo "✅ Limpeza concluída."

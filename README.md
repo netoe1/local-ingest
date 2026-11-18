@@ -30,7 +30,7 @@ By default, output is written to `digest.txt` in the current directory. Use `-o 
 ## Python API
 
 ```python
-from gitingest import ingest
+from local_ingest import ingest
 
 summary, tree, content = ingest("/path/to/any/folder")
 summary, tree, content = ingest(

@@ -1,7 +1,7 @@
 """Test pattern utilities."""
 
-from gitingest.utils.ignore_patterns import DEFAULT_IGNORE_PATTERNS
-from gitingest.utils.pattern_utils import _parse_patterns, process_patterns
+from utils.ignore_patterns import DEFAULT_IGNORE_PATTERNS
+from utils.pattern_utils import _parse_patterns, process_patterns
 
 
 def test_process_patterns_empty_patterns() -> None:

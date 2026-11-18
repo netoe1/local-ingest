@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from pathlib import Path
 
-from gitingest.schemas import IngestionQuery
+from schemas import IngestionQuery
 
 __all__ = ["IngestionQuery", "parse_local_dir_path"]
 

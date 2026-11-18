@@ -39,7 +39,7 @@ dev = [
 ]
 
 [project.scripts]
-local-ingest = "gitingest.__main__:main"
+local-ingest = "cli:main"
 
 [project.urls]
 homepage = "https://gitingest.com"
@@ -50,7 +50,8 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = {find = {where = ["source"]}}
+packages = {find = {where = ["src"], include = ["schemas*", "utils*"]}}
+py-modules = ["cli", "config", "entrypoint", "ingestion", "local_ingest", "output_formatter", "query_parser"]
 include-package-data = true
 
 # Linting configuration
@@ -109,7 +110,7 @@ filter_files = true
 
 # Test configuration
 [tool.pytest.ini_options]
-pythonpath = ["source"]
+pythonpath = ["src"]
 testpaths = ["tests/"]
 python_files = "test_*.py"
 asyncio_mode = "auto"

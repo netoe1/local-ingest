@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from uuid import UUID
 
-from gitingest.config import MAX_FILE_SIZE
+from config import MAX_FILE_SIZE
 
 
 @dataclass

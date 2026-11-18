@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from gitingest.schemas import FileSystemNode, FileSystemNodeType
-from gitingest.utils.compat_func import readlink
-from gitingest.utils.logging_config import get_logger
+from schemas import FileSystemNode, FileSystemNodeType
+from utils.compat_func import readlink
+from utils.logging_config import get_logger
 
 if TYPE_CHECKING:
-    from gitingest.schemas import IngestionQuery
+    from schemas import IngestionQuery
 
 # Initialize logger for this module
 logger = get_logger(__name__)

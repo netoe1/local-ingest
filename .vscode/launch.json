@@ -4,11 +4,11 @@
             "name": "Python Debugger: Module",
             "type": "debugpy",
             "request": "launch",
-            "module": "gitingest",
+            "module": "cli",
             "args": [],
             "cwd": "${workspaceFolder}",
             "env": {
-                "PYTHONPATH": "${workspaceFolder}/source"
+                "PYTHONPATH": "${workspaceFolder}/src"
             }
         }
     ]

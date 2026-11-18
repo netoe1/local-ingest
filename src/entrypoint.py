@@ -6,11 +6,11 @@ import asyncio
 import sys
 from pathlib import Path
 
-from gitingest.config import MAX_FILE_SIZE
-from gitingest.ingestion import ingest_query
-from gitingest.query_parser import parse_local_dir_path
-from gitingest.utils.ignore_patterns import load_ignore_patterns
-from gitingest.utils.pattern_utils import process_patterns
+from config import MAX_FILE_SIZE
+from ingestion import ingest_query
+from query_parser import parse_local_dir_path
+from utils.ignore_patterns import load_ignore_patterns
+from utils.pattern_utils import process_patterns
 
 
 async def ingest_async(

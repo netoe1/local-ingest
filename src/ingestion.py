@@ -5,14 +5,14 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from gitingest.config import MAX_DIRECTORY_DEPTH, MAX_FILES, MAX_TOTAL_SIZE_BYTES
-from gitingest.output_formatter import format_node
-from gitingest.schemas import FileSystemNode, FileSystemNodeType, FileSystemStats
-from gitingest.utils.ingestion_utils import _should_exclude, _should_include
-from gitingest.utils.logging_config import get_logger
+from config import MAX_DIRECTORY_DEPTH, MAX_FILES, MAX_TOTAL_SIZE_BYTES
+from output_formatter import format_node
+from schemas import FileSystemNode, FileSystemNodeType, FileSystemStats
+from utils.ingestion_utils import _should_exclude, _should_include
+from utils.logging_config import get_logger
 
 if TYPE_CHECKING:
-    from gitingest.schemas import IngestionQuery
+    from schemas import IngestionQuery
 
 # Initialize logger for this module
 logger = get_logger(__name__)

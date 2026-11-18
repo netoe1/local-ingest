@@ -6,8 +6,8 @@ import json
 from itertools import chain
 from typing import TYPE_CHECKING, Any
 
-from gitingest.utils.exceptions import InvalidNotebookError
-from gitingest.utils.logging_config import get_logger
+from utils.exceptions import InvalidNotebookError
+from utils.logging_config import get_logger
 
 if TYPE_CHECKING:
     from pathlib import Path

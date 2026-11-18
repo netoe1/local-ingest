@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from gitingest.entrypoint import ingest_async
-from gitingest.utils.ignore_patterns import load_ignore_patterns
+from entrypoint import ingest_async
+from utils.ignore_patterns import load_ignore_patterns
 
 
 @pytest.fixture(name="repo_path")

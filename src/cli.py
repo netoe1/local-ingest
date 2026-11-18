@@ -9,11 +9,11 @@ from typing import TypedDict
 import click
 from typing_extensions import Unpack
 
-from gitingest.config import MAX_FILE_SIZE, OUTPUT_FILE_NAME
-from gitingest.entrypoint import ingest_async
+from config import MAX_FILE_SIZE, OUTPUT_FILE_NAME
+from entrypoint import ingest_async
 
 # Import logging configuration first to intercept all logging
-from gitingest.utils.logging_config import get_logger
+from utils.logging_config import get_logger
 
 # Initialize logger for this module
 logger = get_logger(__name__)

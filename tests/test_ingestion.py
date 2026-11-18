@@ -11,12 +11,12 @@ from typing import TYPE_CHECKING, TypedDict
 
 import pytest
 
-from gitingest.ingestion import ingest_query
+from ingestion import ingest_query
 
 if TYPE_CHECKING:
     from pathlib import Path
 
-    from gitingest.query_parser import IngestionQuery
+    from query_parser import IngestionQuery
 
 
 def test_run_ingest_query(temp_directory: Path, sample_query: IngestionQuery) -> None:
@@ -28,7 +28,6 @@ def test_run_ingest_query(temp_directory: Path, sample_query: IngestionQuery) ->
     """
     sample_query.local_path = temp_directory
     sample_query.subpath = "/"
-    sample_query.type = None
 
     summary, _, content = ingest_query(sample_query)
 
@@ -211,7 +210,6 @@ def test_include_ignore_patterns(
     """
     sample_query.local_path = temp_directory
     sample_query.subpath = "/"
-    sample_query.type = None
     sample_query.include_patterns = pattern_scenario["include_patterns"]
     sample_query.ignore_patterns = pattern_scenario["ignore_patterns"]
 
