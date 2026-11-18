@@ -42,7 +42,7 @@ summary, tree, content = ingest(
 
 The returned values are a short summary, a tree view, and the collected text. Ingestion runs locally and does not require network access.
 
-See [the workflow guide](docs/fluxo-de-funcionamento.md) for the execution flow and module responsibilities.
+See the [workflow guide](docs/workflow.md) for the execution flow and the [file reference](docs/file-reference.md) for the responsibility of each project file.
 
 ## Origin
 
